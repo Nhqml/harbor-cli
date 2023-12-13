@@ -1,0 +1,7 @@
+{
+  "library": "reqwest",
+  "packageName": "api-client",
+  "packageVersion": "0.0.0",
+  "bestFitInt": true,
+  "preferUnsignedInt": true
+}

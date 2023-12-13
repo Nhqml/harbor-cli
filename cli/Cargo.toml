@@ -1,0 +1,21 @@
+[package]
+name = "harbor-cli"
+version = "0.0.1"
+authors = ["Kenji 'Nhqml' Gaillac"]
+description = "A CLI for interacting with the Harbor API"
+edition = "2021"
+
+[dependencies]
+api-client = { path = "../api-client" }
+
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+
+# Maybe useful dependencies
+# log, stderrlog
+# anyhow, thiserror
+# serde
+# figment, confique
+# ignore
+# inquire
