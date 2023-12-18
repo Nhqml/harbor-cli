@@ -32,6 +32,43 @@ impl Configuration {
     pub fn new() -> Configuration {
         Configuration::default()
     }
+
+    pub fn base_path<T: Into<String>>(mut self, base_path: T) -> Configuration {
+        self.base_path = base_path.into();
+        self
+    }
+
+    pub fn user_agent<T: Into<String>>(mut self, user_agent: T) -> Configuration {
+        self.user_agent = Some(user_agent.into());
+        self
+    }
+
+    pub fn basic_auth<T: Into<String>, U: Into<String>>(
+        mut self,
+        username: T,
+        password: Option<U>,
+    ) -> Configuration {
+        self.basic_auth = Some((username.into(), password.map(Into::into)));
+        self
+    }
+
+    pub fn oauth_access_token<T: Into<String>>(mut self, oauth_access_token: T) -> Configuration {
+        self.oauth_access_token = Some(oauth_access_token.into());
+        self
+    }
+
+    pub fn bearer_access_token<T: Into<String>>(mut self, bearer_access_token: T) -> Configuration {
+        self.bearer_access_token = Some(bearer_access_token.into());
+        self
+    }
+
+    pub fn api_key<T: Into<String>>(mut self, prefix: Option<String>, key: T) -> Configuration {
+        self.api_key = Some(ApiKey {
+            prefix,
+            key: key.into(),
+        });
+        self
+    }
 }
 
 impl Default for Configuration {
