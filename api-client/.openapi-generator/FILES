@@ -1,5 +1,4 @@
 .gitignore
-.travis.yml
 Cargo.toml
 README.md
 docs/Access.md
@@ -184,7 +183,6 @@ docs/WebhookTargetObject.md
 docs/WebhookjobApi.md
 docs/Worker.md
 docs/WorkerPool.md
-git_push.sh
 src/apis/artifact_api.rs
 src/apis/auditlog_api.rs
 src/apis/configuration.rs
